@@ -1,8 +1,7 @@
 ﻿<h1>Community Events</h1>
 
 <p>
-    <a asp-controller="Events" asp-action="Add">Add Event</a>
-    <a asp-controller="Events" asp-action="Detail">Event Details</a>
+    <a asp-controller="Events" asp-action="Add">Add Events</a>
 </p>
 
 @if(ViewBag.events.Count == 0)
@@ -14,6 +13,9 @@ else
     <table class="table">
         <tr>
             <th>
+                ID
+            </th>
+            <th>
                 Name
             </th>
             <th>
@@ -23,6 +25,7 @@ else
         @foreach (var evt in ViewBag.events) 
         {
             <tr>
+                <td>@evt.Id</td>
                 <td>@evt.Name</td>
                 <td>@evt.Description</td>
             </tr>

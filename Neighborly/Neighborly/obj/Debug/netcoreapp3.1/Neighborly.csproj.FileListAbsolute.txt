@@ -390,3 +390,4 @@ C:\Users\whild\Documents\LC101\C-Sharp\Capstone\Neighborly\Neighborly\obj\Debug\
 C:\Users\whild\Documents\LC101\C-Sharp\Capstone\Neighborly\Neighborly\obj\Debug\netcoreapp3.1\Razor\Views\Events\Add.cshtml.g.cs
 C:\Users\whild\Documents\LC101\C-Sharp\Capstone\Neighborly\Neighborly\obj\Debug\netcoreapp3.1\Razor\Views\Shared\LinksPartial.cshtml.g.cs
 C:\Users\whild\Documents\LC101\C-Sharp\Capstone\Neighborly\Neighborly\obj\Debug\netcoreapp3.1\Razor\Views\Events\Detail.cshtml.g.cs
+C:\Users\whild\Documents\LC101\C-Sharp\Capstone\Neighborly\Neighborly\obj\Debug\netcoreapp3.1\Razor\Views\Events\Edit.cshtml.g.cs

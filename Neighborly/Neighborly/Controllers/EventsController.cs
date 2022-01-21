@@ -1,4 +1,5 @@
 ﻿using Microsoft.AspNetCore.Mvc;
+using Neighborly.Data;
 using Neighborly.Models;
 using System.Collections.Generic;
 
@@ -6,11 +7,11 @@ namespace Neighborly.Controllers
 {
     public class EventsController : Controller
     {
-        static private List<Event> Events = new List<Event>();
+
         [HttpGet]
         public IActionResult Index()
         {
-            ViewBag.events = Events;
+            ViewBag.events = EventData.GetAll();
 
             return View();
         }
@@ -25,7 +26,7 @@ namespace Neighborly.Controllers
         [Route("/Events/Add")]
         public IActionResult NewEvent(string name, string desc)
         {
-            Events.Add(new Event(name,desc));
+            EventData.Add(new Event(name, desc));
 
             return Redirect("/Events");
         }
@@ -35,6 +36,13 @@ namespace Neighborly.Controllers
         public IActionResult Detail()
         {
             return View();
-        } 
+        }
+
+        [HttpGet]
+        [Route("/Events/Edit")]
+        public IActionResult Edit()
+        {
+            return View();
+        }
     }
 }
