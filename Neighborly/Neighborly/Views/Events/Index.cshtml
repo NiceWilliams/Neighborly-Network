@@ -1,0 +1,31 @@
+﻿<h1>Community Events</h1>
+
+<p>
+    <a asp-controller="Events" asp-action="Add">Add Event</a>
+    <a asp-controller="Events" asp-action="Detail">Event Details</a>
+</p>
+
+@if(ViewBag.events.Count == 0)
+{
+    <p>Making sure this actually works</p>
+}
+else
+{
+    <table class="table">
+        <tr>
+            <th>
+                Name
+            </th>
+            <th>
+                Description
+            </th>
+        </tr>
+        @foreach (var evt in ViewBag.events) 
+        {
+            <tr>
+                <td>@evt.Name</td>
+                <td>@evt.Description</td>
+            </tr>
+        }
+    </table>
+}
