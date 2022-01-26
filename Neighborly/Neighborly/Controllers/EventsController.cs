@@ -1,6 +1,7 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using Neighborly.Data;
 using Neighborly.Models;
+using Neighborly.ViewModels;
 using System.Collections.Generic;
 
 namespace Neighborly.Controllers
@@ -11,24 +12,36 @@ namespace Neighborly.Controllers
         [HttpGet]
         public IActionResult Index()
         {
-            ViewBag.events = EventData.GetAll();
+            List<Event> events = new List<Event>(EventData.GetAll());
 
-            return View();
+            return View(events);
         }
 
         [HttpGet]
         public IActionResult Add()
         {
-            return View();
+            AddEventViewModel addEventViewModel = new AddEventViewModel();
+
+            return View(addEventViewModel);
         }
 
         [HttpPost]
-        [Route("/Events/Add")]
-        public IActionResult NewEvent(string name, string desc)
+        public IActionResult Add(AddEventViewModel addEventViewModel)
         {
-            EventData.Add(new Event(name, desc));
+            if (ModelState.IsValid)
+            {
+                Event newEvent = new Event
+                {
+                    Name = addEventViewModel.Name,
+                    Description = addEventViewModel.Description
+                };
 
-            return Redirect("/Events");
+                EventData.Add(newEvent);
+
+                return Redirect("/Events");
+            }
+
+            return View(addEventViewModel);
         }
 
         [HttpGet]
@@ -43,6 +56,32 @@ namespace Neighborly.Controllers
         public IActionResult Edit()
         {
             return View();
+        }
+
+        [HttpPost]
+        [Route("/Events/Edit")]
+        public IActionResult EditEvent(int eventId, string name)
+        {
+            ViewBag.eventId = EventData.GetById(eventId);
+
+            return View();
+        }
+
+        public IActionResult Delete()
+        {
+            ViewBag.events = EventData.GetAll();
+
+            return View();
+        }
+
+        [HttpPost]
+        public IActionResult Delete(int[] eventIds)
+        {
+            foreach (int eventId in eventIds)
+            {
+                EventData.Remove(eventId);
+            }
+            return Redirect("/Events");
         }
     }
 }
