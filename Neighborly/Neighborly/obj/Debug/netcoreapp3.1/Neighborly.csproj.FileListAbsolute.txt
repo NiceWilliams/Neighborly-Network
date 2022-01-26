@@ -431,3 +431,5 @@ C:\Users\whild\Documents\LC101\C-Sharp\Capstone\Neighborly\Neighborly\bin\Debug\
 C:\Users\whild\Documents\LC101\C-Sharp\Capstone\Neighborly\Neighborly\bin\Debug\netcoreapp3.1\tr\Microsoft.CodeAnalysis.Workspaces.resources.dll
 C:\Users\whild\Documents\LC101\C-Sharp\Capstone\Neighborly\Neighborly\bin\Debug\netcoreapp3.1\zh-Hans\Microsoft.CodeAnalysis.Workspaces.resources.dll
 C:\Users\whild\Documents\LC101\C-Sharp\Capstone\Neighborly\Neighborly\bin\Debug\netcoreapp3.1\zh-Hant\Microsoft.CodeAnalysis.Workspaces.resources.dll
+C:\Users\whild\Documents\LC101\C-Sharp\Capstone\Neighborly\Neighborly\obj\Debug\netcoreapp3.1\Razor\Views\Home\ContactUs.cshtml.g.cs
+C:\Users\whild\Documents\LC101\C-Sharp\Capstone\Neighborly\Neighborly\obj\Debug\netcoreapp3.1\Razor\Views\Home\AboutUs.cshtml.g.cs

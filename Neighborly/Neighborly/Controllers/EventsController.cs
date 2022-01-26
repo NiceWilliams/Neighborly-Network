@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Mvc;
 using Neighborly.Data;
 using Neighborly.Models;
 using Neighborly.ViewModels;
@@ -24,6 +25,7 @@ namespace Neighborly.Controllers
             return View(events);
         }
 
+        [Authorize]
         [HttpGet]
         public IActionResult Add()
         {
@@ -59,12 +61,14 @@ namespace Neighborly.Controllers
             return View();
         }
 
+        [Authorize]
         [HttpGet]
         [Route("/Events/Edit")]
         public IActionResult Edit()
         {
             return View();
         }
+
 
         [HttpPost]
         [Route("/Events/Edit")]
@@ -75,6 +79,7 @@ namespace Neighborly.Controllers
             return View();
         }
 
+        [Authorize]
         public IActionResult Delete()
         {
             ViewBag.events = context.Events.ToList();
