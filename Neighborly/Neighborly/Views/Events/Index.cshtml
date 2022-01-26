@@ -1,10 +1,17 @@
-﻿<h1>Community Events</h1>
+﻿@using Neighborly.Models
+
+@model List<Event>
+
+<h1>Community Events</h1>
 
 <p>
-    <a asp-controller="Events" asp-action="Add">Add Events</a>
+    <a asp-controller="Events" asp-action="Add">Add Event(s)</a>
+</p>
+<p>
+    <a asp-controller="Events" asp-action="Delete">Delete Event(s)</a>
 </p>
 
-@if(ViewBag.events.Count == 0)
+@if(Model.Count == 0)
 {
     <p>Making sure this actually works</p>
 }
@@ -21,8 +28,14 @@ else
             <th>
                 Description
             </th>
+            <th>
+                Contact Email
+            </th>
+            <th>
+                Type
+            </th>
         </tr>
-        @foreach (var evt in ViewBag.events) 
+        @foreach (var evt in Model) 
         {
             <tr>
                 <td>@evt.Id</td>

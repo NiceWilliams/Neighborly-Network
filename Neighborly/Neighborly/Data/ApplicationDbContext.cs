@@ -9,7 +9,7 @@ namespace Neighborly.Data
 {
     public class ApplicationDbContext : IdentityDbContext
     {
-        DbSet<Event> Events { get; set; }
+        public DbSet<Event> Events { get; set; }
         public ApplicationDbContext(DbContextOptions<ApplicationDbContext> options)
             : base(options)
         {
